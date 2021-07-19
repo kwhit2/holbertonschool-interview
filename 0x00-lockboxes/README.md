@@ -38,3 +38,5 @@ print(canUnlockAll(boxes))
 boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
 print(canUnlockAll(boxes))
 ```
+
+# [Resource](https://stackoverflow.com/questions/63024056/lockboxes-problem-list-inside-a-list-and-each-list-contains-keys-to-unlock-the)
