@@ -12,6 +12,7 @@ def join(T, R):
             res += T[e]
     except IndexError:
         return res
+
     return res
 
 
