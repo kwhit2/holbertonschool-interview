@@ -3,11 +3,13 @@
     Each box is numbered sequentially from 0 to n - 1 and each box may contain
     keys to the other boxes. """
 
-def join(T,R):
+
+def join(T, R):
     res = []
     for e in R:
         res += T[e]
     return res
+
 
 def canUnlockAll(boxes):
     """ method that determines if lockboxes can be opened """
@@ -19,6 +21,6 @@ def canUnlockAll(boxes):
         for j in join(boxes, total[index:]):
             if j not in total:
                 total.append(j)
-                index +=1
+                index += 1
                 added = True
     return len(total) == len(boxes)
