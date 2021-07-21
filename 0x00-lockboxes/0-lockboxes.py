@@ -17,15 +17,15 @@ def canUnlockAll(boxes):
     index = 0
     total = list(set(boxes[0]) | {0})
     added = True
-    while added:
-        added = False
-        try:
+    try:
+        while added:
+            added = False
             for j in join(boxes, total[index:]):
                 if j not in total:
                     total.append(j)
                     index += 1
                     added = True
-        except IndexError:
-            return False
+    except IndexError:
+        return True
 
     return len(total) == len(boxes)
