@@ -7,12 +7,8 @@
 def join(T, R):
     """ join method """
     res = []
-    try:
-        for e in R:
-            res += T[e]
-    except IndexError:
-        return res
-
+    for e in R:
+        res += T[e]
     return res
 
 
@@ -23,9 +19,13 @@ def canUnlockAll(boxes):
     added = True
     while added:
         added = False
-        for j in join(boxes, total[index:]):
-            if j not in total:
-                total.append(j)
-                index += 1
-                added = True
+        try:
+            for j in join(boxes, total[index:]):
+                if j not in total:
+                    total.append(j)
+                    index += 1
+                    added = True
+        except IndexError:
+            return False
+
     return len(total) == len(boxes)
