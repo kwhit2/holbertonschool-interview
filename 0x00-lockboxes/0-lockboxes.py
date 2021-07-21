@@ -9,7 +9,8 @@ def canUnlockAll(boxes):
     keysDict = {
         0: True
     }
-    # keep track of number of times going through the while loop (prevent infinite loop)
+    # keep track of number of times going through the...
+    # ...while loop (prevent infinite loop)
     loopIterations = 0
 
     # set the rest of the dict to False values to start
@@ -27,7 +28,8 @@ def canUnlockAll(boxes):
     except IndexError:
         return False
 
-    # if there is still a False value anywhere in dict then the method returns false
+    # if there is still a False value anywhere in dict...
+    # ...then the method returns false
     if False in keysDict.values():
         return False
     return True
