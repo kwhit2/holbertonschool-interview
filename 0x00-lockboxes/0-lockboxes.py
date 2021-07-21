@@ -25,6 +25,7 @@ def canUnlockAll(boxes):
                     total.append(j)
                     index += 1
                     added = True
-                    return len(total) == len(boxes)
         except IndexError:
             return False
+
+    return len(total) == len(boxes)
