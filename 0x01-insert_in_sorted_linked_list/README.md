@@ -24,3 +24,5 @@ This is a weekly algorithm interview preparation project of specializations.
 - Write a function in C that inserts a number into a sorted singly linked list.
     - Prototype: listint_t *insert_node(listint_t **head, int number);
     - Return: the address of the new node, or NULL if it failed
+
+### [Resource](http://www.dailyfreecode.com/Code/inserting-number-sorted-linked-list-2551.aspx)
