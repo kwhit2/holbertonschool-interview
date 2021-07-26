@@ -1,4 +1,5 @@
 # 0x00. Lockboxes
+This is a weekly algorithm interview preparation project of specializations.
 - [Project Page](https://intranet.hbtn.io/projects/498)
 
 ## Requirements
