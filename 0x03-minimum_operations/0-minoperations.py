@@ -18,7 +18,7 @@ def prime_factors(n):
 
 
 def minOperations(n):
-    """ deterime sum of minimum number of operations """
+    """ determine sum of minimum number of operations """
     if n == 0 or n == 1:
         return 0
     else:
