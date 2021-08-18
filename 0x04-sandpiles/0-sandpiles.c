@@ -56,22 +56,22 @@ void topple(int grid1[3][3])
 }
 
 /**
- * print_grid - Print 3x3 grid
+ * print_gridd - Print 3x3 grid
  * @grid: 3x3 grid
  * Return: void
  */
 void print_gridd(int grid[3][3])
 {
-    int i, j;
+	int i, j;
 
-    for (i = 0; i < 3; i++)
-    {
-        for (j = 0; j < 3; j++)
-        {
-            if (j)
-                printf(" ");
-            printf("%d", grid[i][j]);
-        }
-        printf("\n");
-    }
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			if (j)
+				printf(" ");
+			printf("%d", grid[i][j]);
+		}
+		printf("\n");
+	}
 }
