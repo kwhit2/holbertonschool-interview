@@ -38,7 +38,6 @@ void topple(int grid1[3][3])
 			{
 				nextgrid[i][j] = grid1[i][j];
 				print_gridd(grid1);
-
 			}
 
 			if (num >= 4)
