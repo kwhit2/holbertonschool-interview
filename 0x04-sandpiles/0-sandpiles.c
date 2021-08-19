@@ -1,64 +1,82 @@
 #include "sandpiles.h"
+#include <stdbool.h>
 
 /**
-* sandpiles_sum - Function that computes the sum of two sandpiles
-* @grid1: sandpile1
-* @grid2: sandpile2
-* Return: void
+* add_sand - add two sandpiles (no toppling yet)
+* @grid1: first sandpile, matrix of ints
+* @grid2: second sandpile, matrix of ints
+* Return: sum of two sandpiles' values (no toppling yet)
 */
-void sandpiles_sum(int grid1[3][3], int grid2[3][3])
+
+void add_sand(int grid1[3][3], int grid2[3][3])
 {
 	int i, j;
+	/*int newgrid[3][3];*/
 
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
-		{
 			grid1[i][j] = grid1[i][j] + grid2[i][j];
-		}
 	}
 }
 
 /**
-* topple - Function to topple a sandpile
-* @grid1: sandpile
+* sandpiles_sum- computes the sum of two sandpiles
+* @grid1: first sandpile, matrix of ints
+* @grid2: second sandpile, matrix of ints
+* Return: sum of two sandpiles
+*/
+
+void sandpiles_sum(int grid1[3][3], int grid2[3][3])
+{
+	int i, j, check, newgrid[3][3];
+
+	add_sand(grid1, grid2);
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			newgrid[i][j] = grid1[i][j];
+		}
+	}
+	check = check_stable(grid1);
+	while (check == 1)
+	{
+		printf("=\n");
+		print_gridd(grid1);
+		for (i = 0; i < 3; i++)
+		{
+			for (j = 0; j < 3; j++)
+			{
+				if (grid1[i][j] >= 4)
+					newgrid[i][j] -= 4;
+				if (i != 0 && grid1[i - 1][j] >= 4)
+					newgrid[i][j]++;
+				if (i != 2 && grid1[i + 1][j] >= 4)
+					newgrid[i][j]++;
+				if (j != 0 && grid1[i][j - 1] >= 4)
+					newgrid[i][j]++;
+				if (j != 2 && grid1[i][j + 1] >= 4)
+					newgrid[i][j]++;
+			}
+		}
+		for (i = 0; i < 3; i++)
+		{
+			for (j = 0; j < 3; j++)
+			{
+				grid1[i][j] = newgrid[i][j];
+			}
+		}
+		check = check_stable(grid1);
+	}
+}
+
+/**
+* print_gridd- print a grid
+* @grid: sandpile, matrix of ints
 * Return: void
 */
-void topple(int grid1[3][3])
-{
-	int i, j, num;
-	int nextgrid[3][3];
 
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 3; j++)
-		{
-			num = grid1[i][j];
-			if (num < 4)
-			{
-				nextgrid[i][j] = grid1[i][j];
-				print_gridd(grid1);
-			}
-
-			if (num >= 4)
-			{
-				nextgrid[i][j] = grid1[i][j];
-				nextgrid[i + 1][j]++;
-				nextgrid[i - 1][j]++;
-				nextgrid[i][j + 1]++;
-				nextgrid[i][j - 1]++;
-				print_gridd(grid1);
-			}
-		}
-	}
-	grid1 = nextgrid;
-}
-
-/**
- * print_gridd - Print 3x3 grid
- * @grid: 3x3 grid
- * Return: void
- */
 void print_gridd(int grid[3][3])
 {
 	int i, j;
@@ -73,4 +91,29 @@ void print_gridd(int grid[3][3])
 		}
 		printf("\n");
 	}
+}
+
+
+/**
+* check_stable- computes the sum of two sandpiles
+* @grid1: first sandpile, matrix of ints
+* Return: sum of two sandpiles
+*/
+
+int check_stable(int grid1[3][3])
+{
+	int i, j, num;
+
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			num = grid1[i][j];
+			if (num >= 4)
+			{
+				return (1);
+			}
+		}
+	}
+	return (0);
 }
