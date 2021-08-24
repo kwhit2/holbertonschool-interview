@@ -9,7 +9,6 @@
 * empty list is considered a palindrome
 * Return: 0 if it is not a palindrome, 1 if it is a palindrome
 */
-
 int is_palindrome(listint_t **head)
 {
 if (!*head)
@@ -25,16 +24,20 @@ if (!*head)
 * empty list is considered a palindrome
 * Return: 0 if it is not a palindrome, 1 if it is a palindrome
 */
-
 int pal_meat(listint_t **left, listint_t *right)
 {
+/* if list is empty */
 if (!right)
 	return (1);
+/* recurse through list checking if nodes are present and values are equal */
 if (pal_meat(left, right->next) && (*left)->n == right->n)
 {
+	/* traverse list */
 	*left = (*left)->next;
+	/* base case/is palindrome if successfully passes checks */
 	return (1);
 }
 else
+/* not a palindrome */
 	return (0);
 }
