@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" script that reads stdin line by line and computes metrics """
 import sys
 
 count = 0
@@ -11,9 +12,9 @@ for line in sys.stdin:
         fileSize = metricsInput[-3:]
         fileSizeCt += 1
         statusCode = metricsInput
-        # fileSize = 
+        # fileSize =
         if (count % 10 == 0):
             print("{}: ".format(fileSize))
             print("{}".format(metricsInput))
-    except KeyboardInterrupt: 
+    except KeyboardInterrupt:
         print('Hello user you have pressed ctrl-c button.')
