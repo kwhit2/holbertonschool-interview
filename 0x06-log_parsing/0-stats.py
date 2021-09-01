@@ -5,7 +5,7 @@ from sys import stdin
 
 def printMetrics(statusCodes, fileSize):
     """ ^ print metrics ^ """
-    print("File Size: " + str(fileSize))
+    print("File size: " + str(fileSize))
     for line in sorted(statusCodes.keys()):
         if statusCodes[line] > 0:
             print(line + ": " + str(statusCodes[line]))
