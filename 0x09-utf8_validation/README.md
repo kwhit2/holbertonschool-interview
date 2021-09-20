@@ -12,3 +12,5 @@
 
 ## Task Description
 - Write a method that determines if a given data set represents a valid UTF-8 encoding.
+
+### [Resource](https://codereview.stackexchange.com/questions/159814/utf-8-validation)
