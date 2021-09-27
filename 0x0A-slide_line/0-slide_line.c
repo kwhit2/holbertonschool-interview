@@ -6,7 +6,7 @@
 * @line: points to an array of integers containing...
 * @size: elements that must be slide and merged to the direction
 * ...represented by...
-& @direction: direction to slide (SLIDE_LEFT & SLIDE_RIGHT)
+* @direction: direction to slide (SLIDE_LEFT & SLIDE_RIGHT)
 * Return: 1 for success, and 0 otherwise
 */
 int slide_line(int *line, size_t size, int direction)
