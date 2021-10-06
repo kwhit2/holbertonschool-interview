@@ -7,11 +7,9 @@
 */
 void menger(int level)
 {
-	Carpet carp;
-
-	if (level < 0)
+	if (level <= 0)
 	{
-		printf("###\n# #\n###");
+		printf("#\n");
 		return;
 	}
 }
