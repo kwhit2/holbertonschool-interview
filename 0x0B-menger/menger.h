@@ -6,5 +6,6 @@
 #include <string.h>
 
 void menger(int level);
+void mengerHelp(int level);
 
 #endif

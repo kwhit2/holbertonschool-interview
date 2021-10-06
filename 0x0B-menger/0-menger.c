@@ -27,6 +27,20 @@ void menger(int level)
 	}
 	if (level == 3)
 	{
+		mengerHelp(level);
+		return;
+	}
+}
+
+/**
+* mengerHelp - a helper function that draws a 2D Menger Sponge
+* @level: level of the Menger Sponge to draw
+* Return: draw output of 2d menger sponge
+*/
+void mengerHelp(int level)
+{
+	if (level == 3)
+	{
 		printf("###########################\n");
 		printf("# ## ## ## ## ## ## ## ## #\n");
 		printf("###########################\n");
@@ -54,6 +68,5 @@ void menger(int level)
 		printf("###########################\n");
 		printf("# ## ## ## ## ## ## ## ## #\n");
 		printf("###########################\n");
-		return;
 	}
 }
