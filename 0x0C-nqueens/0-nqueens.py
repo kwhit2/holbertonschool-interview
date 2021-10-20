@@ -3,26 +3,17 @@
 
 import sys
 from sys import argv
-BOARD_SIZE = int(argv[1])
 
 
-def under_attack(col, queens):
-    return col in queens or \
-           any(abs(col - x) == len(queens)-i for i, x in enumerate(queens))
+def queens(n, i, a, b, c):
+    if i < n:
+        for j in range(n):
+            if j not in a and i + j not in b and i - j not in c:
+                yield from queens(n, i + 1, a + [j], b + [i + j], c + [i - j])
+    else:
+        yield a
 
+for solution in queens(8, 0, [], [], []):
+    print(solution)
 
-def solve(n):
-    solutions = [[]]
-    for row in range(n):
-        solutions = (solution+[i+1]
-                     for solution in solutions
-                     for i in range(BOARD_SIZE)
-                     if not under_attack(i+1, solution))
-    return solutions
-
-answers = solve(BOARD_SIZE)
-first_answer = next(answers)
-print(list(enumerate(first_answer, start=1)))
-
-# printing one line of output like so incorrectly for our task
-# [(1, 2), (2, 4), (3, 1), (4, 3)]
+# way to much output
