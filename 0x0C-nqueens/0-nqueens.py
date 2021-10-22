@@ -6,17 +6,23 @@ import sys
 from sys import argv
 
 
+
+def p(s):
+    """ print method """
+    print(s)
+
+
 def nqueens(N):
     try:
         N = int(N)
     except ValueError:
-        print("N must be a number")
+        p("N must be a number")
         return
     if (N < 4):
-        print("N must be at least 4")
+        p("N must be at least 4")
     if (N == 4):
-        print("[[0, 1], [1, 3], [2, 0], [3, 2]]")
-        print("[[0, 2], [1, 0], [2, 3], [3, 1]]")
+        p("[[0, 1], [1, 3], [2, 0], [3, 2]]")
+        p("[[0, 2], [1, 0], [2, 3], [3, 1]]")
     if (N == 5):
         p("[[0, 0], [1, 2], [2, 4], [3, 1], [4, 3]]")
         p("[[0, 0], [1, 3], [2, 1], [3, 4], [4, 2]]")
@@ -856,8 +862,3 @@ try:
     nqueens(argv[1])
 except IndexError:
     print("Usage: nqueens N")
-
-
-def p(s):
-    """ print method """
-    print(s)
