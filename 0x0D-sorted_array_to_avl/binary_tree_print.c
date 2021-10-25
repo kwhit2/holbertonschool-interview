@@ -3,7 +3,10 @@
 #include <string.h>
 #include "binary_trees.h"
 
-/* Original code from http://stackoverflow.com/a/13755911/5184480 */
+/* Original code from http://stackoverflow.com/a/13755911/5184480
+ * As this code/file was provided via Holberton for the desired printing
+ * output of this task.
+ */
 
 /**
  * print_t - Stores recursively each level in an array of strings
