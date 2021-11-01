@@ -11,5 +11,16 @@
 */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
+	skiplist_t *current;
 
+	if (list == NULL)
+		return (NULL);
+	current = list;
+	while (current)
+	{
+		if (current->n == value)
+			return (current);
+		current = current->next;
+	}
+	return (NULL);
 }
