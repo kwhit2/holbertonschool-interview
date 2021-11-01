@@ -1,0 +1,4 @@
+# ignoring these files for checker requirements
+create_skiplist.c
+free_skiplist.c
+print_skiplist.c
