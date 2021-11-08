@@ -3,6 +3,7 @@
 const request = require('request');
 const process = require('process');
 
+// need to encorporate "in the same order as the “characters” list in the /films/ endpoint"
 request.get('https://swapi-api.hbtn.io/api/films/' + process.argv[2] + '/', function (err, response, body) {
   if (err) {
     console.log(err);
