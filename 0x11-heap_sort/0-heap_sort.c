@@ -54,27 +54,27 @@ void helper_heap_sort(int *array, size_t size, int *arrcpy, size_t cpysize)
 */
 void sift_down(int *arr, size_t i, size_t size, int *arrcpy, size_t cpysize)
 {
-	size_t left, right, largest;
+	size_t left, right, chonky;
 	int temp = 0;
 
 	left = 2 * i + 1;
 	right = 2 * i + 2;
-	largest = i;
+	chonky = i;
 
-	if (left < size && arr[left] > arr[largest])
-		largest = left;
+	if (left < size && arr[left] > arr[chonky])
+		chonky = left;
 
-	if (right < size && arr[right] > arr[largest])
-		largest = right;
+	if (right < size && arr[right] > arr[chonky])
+		chonky = right;
 
-	if (largest != i)
+	if (chonky != i)
 	{
 		temp = arr[i];
-		arr[i] = arr[largest];
-		arr[largest] = temp;
+		arr[i] = arr[chonky];
+		arr[chonky] = temp;
 		arrcpy[i] = arr[i];
-		arrcpy[largest] = arr[largest];
+		arrcpy[chonky] = arr[chonky];
 		print_array(arr, size);
-		sift_down(arr, largest, size, arrcpy, cpysize);
+		sift_down(arr, chonky, size, arrcpy, cpysize);
 	}
 }
