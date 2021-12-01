@@ -15,7 +15,7 @@ int advanced_binary(int *array, size_t size, int value)
 	int outcome = 0;
 	size_t i = 0;
 
-	if (array == NULL || size < 2)
+	if (array == NULL || size < 1)
 		return (-1);
 
 	print_searching_output(&array[i], size);
