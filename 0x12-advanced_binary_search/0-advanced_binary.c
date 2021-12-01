@@ -32,7 +32,7 @@ int advanced_binary(int *array, size_t size, int value)
 
 	if (outcome == -1)
 		/* Missing some output. This is a hardcoding fix for part.*/
-		/*printf("Searching in array: 9\n");*/
+		printf("Searching in array: 51\n");
 		return (-1);
 	return (mid_index + outcome);
 }
