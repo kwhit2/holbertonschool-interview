@@ -14,20 +14,17 @@ def count_words(subreddit, word_list, word_dict={}, count=0, after=None):
     headers = {'User-agent': 'test'}
     parameter = {'limit': 100, 'after': after}
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    try:
-        response = requests.get(url, headers=headers, params=parameter,
-                                allow_redirects=False)
-    except BaseException:
-        return None
+    response = requests.get(url, headers=headers, params=parameter,
+                            allow_redirects=False)
+
     if response.status_code != 200:
         return None
-    try:
-        data = response.json()
-        rspn = data.get('data')
-        child = rspn.get('children')
-        after = rspn.get('after')
-    except BaseException:
-        return None
+
+    data = response.json()
+    rspn = data.get('data')
+    child = rspn.get('children')
+    after = rspn.get('after')
+
     for titles in child:
         postTitle = (titles.get('data')['title']).lower()
         for post in postTitle.split():
