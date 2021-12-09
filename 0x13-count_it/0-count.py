@@ -6,7 +6,6 @@
 from collections import OrderedDict
 import json
 import requests
-from sys import argv
 
 
 def count_words(subreddit, word_list, word_dict={}, count=0, after=None):
