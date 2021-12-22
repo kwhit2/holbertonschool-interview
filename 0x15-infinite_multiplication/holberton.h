@@ -6,7 +6,7 @@
 #include <string.h>
 #include <math.h>
 
-void error_printing(void);
+void ERR_output(void);
 int check_string(char *argv[]);
 int _putchar(char c);
 

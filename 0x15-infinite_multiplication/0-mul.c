@@ -2,11 +2,11 @@
 
 /**
 * ERR_output - error handling
-* @err: void
+* @void: void
 * Return: 0
 */
 
-void ERR_output(err)
+void ERR_output(void)
 {
 	char *e = "Error\n";
 	int i;
@@ -16,7 +16,7 @@ void ERR_output(err)
 }
 
 /**
-* check_string - checks if string is int and if so, is it 0
+* check_string - checks if string is int, if so, is it 0?
 * @argv: input string
 * Return: -1 1 or 0
 */
@@ -52,7 +52,6 @@ int check_string(char *argv[])
 int main(int argc, char *argv[])
 {
 	int str_check, ans = 0;
-	/*int a[100], b[100];*/
 
 	if (argc != 3)
 	{
