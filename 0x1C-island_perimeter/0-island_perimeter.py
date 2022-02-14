@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+""" island_perimeter.py: Island perimeter : A function that returns the...
+    ...perimeter of the island described in grid."""
 
-""" island_perimeter.py: Island perimeter """
 
 def island_perimeter(grid):
-    """
-    grid: list of lists of integers
-    """
+    """ grid: list of lists of integers """
     perimeter = 0
     for i in range(len(grid)):
         for j in range(len(grid[i])):
