@@ -3,7 +3,7 @@
 /**
 * wildcmp - compares two strings. s2 can contain the special character '*'
 * which can replace any string (including empty string)
-* 
+*
 * @s1: string 1
 * @s2: string 2
 *
@@ -21,7 +21,9 @@ int wildcmp(char *s1, char *s2)
 	if (*s2 == '*')
 	{
 		if (*(s2 + 1) == '\0')
+		{
 			return (1);
+		}
 		else
 		{
 			while (*s1 != '\0')
